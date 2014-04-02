@@ -1,0 +1,11 @@
+<h1>Learn To Program</h1>
+
+<ul>
+<% @sections.each do |section| %>
+  <H3><li><a href="/sections/<%= section.id %>"><%= section.number %>. <%= section.name %></a></li></H3>
+<% end %>
+</ul>
+
+<p><a href="/sections/new">Create a new section</a>
+
+  <p><a href="/lessons/new">Create a new lesson to add to a section</a>

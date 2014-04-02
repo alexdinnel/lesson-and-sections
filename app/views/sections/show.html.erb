@@ -1,0 +1,20 @@
+<h1><%= @section.name %></h1>
+
+
+<ul>
+  <% @lessons.each do |lesson| %>
+    <h3><li><a href="/lessons/<%= lesson.id %>"><%= lesson.number %>. <%= lesson.name %></a></li></h3>
+  <% end %>
+</ul>
+
+<p><a href="/sections/<%= @section.id %>/edit">Edit the section</a>
+
+<% if @previous != nil %>
+  <p><a href="/sections/<%= @previous.id %>">Previous</a></p>
+<% end %>
+
+<% if @next != nil %>
+  <p><a href="/lessons/<%= @next.id %>">Next</a></p>
+<% end %>
+
+<p><a href="/">Go back to the main section page</a>

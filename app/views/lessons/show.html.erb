@@ -1,0 +1,17 @@
+<h1><%= @lesson.name %></h1>
+
+<p><%= @lesson.text %></p>
+
+<p><a href="/lessons/<%= @lesson.id %>/edit">Edit the lesson</a>
+
+<% if @previous != nil %>
+  <p><a href="/lessons/<%= @previous.id %>">Previous</a></p>
+<% end %>
+
+<% if @next != nil %>
+  <p><a href="/lessons/<%= @next.id %>">Next</a></p>
+<% end %>
+
+<p><a href="/sections/<%= @section.id %>">Go back to the <%= @section.name %> section page</a>
+
+

@@ -1,0 +1,29 @@
+<h1>Edit Lesson</h1>
+
+<% if @lesson.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @lesson.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/lessons/<%= @lesson.id %>/edit" method="post">
+    <input name="_method" type="hidden" value="patch">
+  <label for="lesson_name">Name</label>
+  <input id="lesson_name" name="updated_lesson[name]" type="text" value="<%= @lesson.name %>">
+  <label for="lesson_text">Text</label>
+  <input id="lesson_text" name="updated_lesson[text]" type="text" value="<%= @lesson.text %>">
+  <label for="lesson_number">Lesson No.</label>
+  <input id="lesson_number" name="updated_lesson[number]" type="text" value="<%= @lesson.number %>">
+  <button>Update Lesson</button>
+</form>
+
+<p><a href="/lessons/<%= @lesson.id %>/edit"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></p>
+
+
+<p><a href="/lessons/<%= @lesson.id %>">Go back to the show lesson page</a>
